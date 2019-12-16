@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="@Url.Action("Index", "Home")">Index</a>
+            </li>
+            <li>
+                @Html.ActionLink("Math Table", "MathTable", "Home")
+            </li>
+            <li>
+                <a asp-action="Contact" asp-controller="Home">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <hr />
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <hr />
+
+    <footer>
+        <p>Ulf &copy; @DateTime.Now.Year</p>
+    </footer>
+
+</body>
+</html>
