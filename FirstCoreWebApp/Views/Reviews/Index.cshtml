@@ -1,0 +1,23 @@
+﻿@using FirstCoreWebApp.Models
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reviews Index</h1>
+
+<a asp-action="Create" >Create</a>
+
+<table>
+
+    @if (ViewBag.ReviewList != null)
+    {
+        @for (int i = 0; i < ((List<Review>)ViewBag.ReviewList).Count; i++)
+        {
+    <tr>
+        <td>@(((Review)ViewBag.ReviewList[i]).Id)</td>
+        <td>@(((Review)ViewBag.ReviewList[i]).Info)</td>
+    </tr>
+        }
+    }
+
+</table>

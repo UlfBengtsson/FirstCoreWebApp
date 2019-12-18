@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" asp-controller="Reviews" method="post">
+
+    <input type="text" name="info" value="" placeholder="Review info" />
+    <span>@ViewBag.Msg</span>
+
+    <input type="submit" value="Save" />
+
+</form>
