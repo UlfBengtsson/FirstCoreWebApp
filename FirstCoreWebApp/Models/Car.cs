@@ -14,5 +14,9 @@ namespace FirstCoreWebApp.Models
         public string Brand { get; set; }
         public string ModelName { get; set; }
 
+        public Car()
+        {
+            Id = ++idCounter;
+        }
     }
 }
