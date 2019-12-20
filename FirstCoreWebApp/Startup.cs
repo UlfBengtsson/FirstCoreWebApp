@@ -17,6 +17,7 @@ namespace FirstCoreWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();// add MVC so we can use it
+            //services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,12 +36,13 @@ namespace FirstCoreWebApp
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "ReviewRoute",                                        //Name of Route rule
+                    pattern: "TheReviews",                                      //Url to match
+                    defaults: new { controller = "Reviews", action = "Index" }  //What Controller & Action to call
+                    );
                 // special routes before default
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                //endpoints.MapGet("/", async context =>
-                //{
-                //    await context.Response.WriteAsync("Hello World!");
-                //});
             });
         }
     }
